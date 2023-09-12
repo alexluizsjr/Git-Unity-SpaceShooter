@@ -1,7 +1,9 @@
 ﻿using UnityEngine; // Declaração de biblioteca .
 [System.Serializable]// Determinada classe será serializada pelo sistema .
 
-public class LimiteTela{  public float xMin, xMax, yMin, yMax; }// São os valores de
+public class LimiteTela {  
+    [SerializeField] public float xMin, xMax, yMin, yMax; 
+    }// São os valores de
 // limite da tela, de onde a nave não poderá passar .
 
 public class PlayerGerente : MonoBehaviour {
@@ -24,10 +26,18 @@ Vector3 mover = new Vector3(horizontal, vertical, 0); //Cria novo vetor com os
 gameObject.GetComponent<Rigidbody2D>().velocity = mover * velocidade;
 //Componente Rigidbody 2D e velocidade recebe variável mover *  variável
 // velocidade;
-gameObject.GetComponent<Rigidbody2D>().position = new Vector3 (
-Mathf.Clamp(gameObject.GetComponent<Rigidbody2D>().position.x,
-limite.xMin, limite.xMax),
-Mathf.Clamp(gameObject.GetComponent<Rigidbody2D>().position.y,
-limite.yMin, limite.yMax),   0 ); //Não permite que a nave vá além dos limites estipulados pelos valores de xMin, xMax, yMin, yMax;
+gameObject.GetComponent<Rigidbody2D>().position = new Vector3
+(Mathf.Clamp(gameObject.GetComponent<Rigidbody2D>().position.x, 
+ limite.xMin, limite.xMax), 
+ Mathf.Clamp(gameObject.GetComponent<Rigidbody2D>().position.y, 
+ limite.yMin, limite.yMax),   0 );
+//Não permite que a nave vá além dos limites estipulados pelos valores de xMin, xMax, yMin, yMax;
+
+if (gameObject != null) {
+    // Faça algo com myObject
+} else {
+    Debug.LogError("gameObject é nulo."); // Emita um erro ou mensagem de depuração, se necessário.
+}
 } 
 }
+

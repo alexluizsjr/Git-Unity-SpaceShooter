@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerTiros : MonoBehaviour {
+public class PlayerTiro : MonoBehaviour {
 public GameObject shot; // Neste campo colocaremos o Tiro.
 public Transform shotSpaw; //Neste campo o SpawnShoot.
 public float tempo_Entre_Tiros; // Valor determina o tempo entre os tiros.
