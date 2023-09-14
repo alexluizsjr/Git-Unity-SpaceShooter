@@ -35,6 +35,7 @@ gameObject.GetComponent<Rigidbody2D>().position = new Vector3
 
 if (gameObject != null) {
     // Faça algo com myObject
+    Debug.LogError("gameObject não é  nulo.");
 } else {
     Debug.LogError("gameObject é nulo."); // Emita um erro ou mensagem de depuração, se necessário.
 }
