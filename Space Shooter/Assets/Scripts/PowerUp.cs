@@ -9,7 +9,8 @@ namespace SeuNamespace
 
 public float velocidade;
 void Start() {
-//Aqui movemos o PowerUp na mesma direção que as nuvens estão se //movendo
+//Aqui movemos o PowerUp na mesma direção que as nuvens estão se
+//movendo
 gameObject.GetComponent<Rigidbody2D>().velocity = -transform.up * velocidade;    }
 void FixedUpdate() {
 if (transform.position.y < -5) { //Caso o PowerUp não for pego pela nave, ele
